@@ -398,13 +398,13 @@ export default function App() {
                 <span className="text-sm font-medium">Modern Web Solutions</span>
               </div>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Modern Websites for{' '}
+                Tech Solutions for{' '}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Growing Businesses
+                  bussinesses and startups
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                We build fast, modern, and affordable websites that help your business stand out online. Professional web solutions designed for startups and small businesses.
+                We build fast, modern, and affordable websites,apps and ai agents that help your business stand out online. Professional web solutions designed for startups and small businesses.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
@@ -841,9 +841,7 @@ export default function App() {
               <div className="glass-card-lg bg-gradient-to-br from-blue-500/40 to-purple-600/40 text-white">
                 <h3 className="text-2xl font-bold mb-4">Business Hours</h3>
                 <div className="space-y-2 text-white/90">
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p>Saturday: 10:00 AM - 4:00 PM</p>
-                  <p>Sunday: Closed</p>
+                  <p>anytime</p>
                 </div>
               </div>
             </motion.div>
@@ -863,7 +861,7 @@ export default function App() {
                 <span className="text-lg font-bold">Infotek Solutions</span>
               </div>
               <p className="text-muted-foreground text-sm">
-                Building modern websites for growing businesses.
+                Give online identity to your business.
               </p>
             </div>
 
@@ -897,6 +895,9 @@ export default function App() {
               <h4 className="font-bold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Business Websites</li>
+                <li>application development</li>
+                <li>ai agents</li>
+                <li>maintenance</li>
                 <li>Landing Pages</li>
                 <li>Portfolio Websites</li>
                 <li>E-commerce Sites</li>
