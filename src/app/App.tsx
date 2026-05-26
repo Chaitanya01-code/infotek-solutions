@@ -22,7 +22,9 @@ import {
   Zap,
   Check,
   Star,
-  Globe
+  Globe,
+  Sparkles,
+  Rocket
 } from 'lucide-react';
 
 export default function App() {
@@ -145,6 +147,16 @@ export default function App() {
       icon: Settings,
       title: 'Website Maintenance',
       description: 'Keep your website running smoothly with regular updates and technical support.'
+    },
+    {
+      icon: Rocket,
+      title: 'Application Development',
+      description: 'Custom software solutions tailored to your business needs.'
+    },
+    {
+      icon: Sparkles,
+      title: 'AI Agents',
+      description: 'Keep your work faster with AI agents that can automate tasks and provide intelligent assistance.'
     }
   ];
 
@@ -177,8 +189,8 @@ export default function App() {
 
   const pricingPlans = [
     {
-      name: 'Starter Website',
-      price: '₹4,999',
+      name: 'Simple Website',
+      price: '₹2,999',
       description: 'Perfect for small businesses and personal sites',
       features: [
         'Up to 5 pages',
@@ -190,7 +202,7 @@ export default function App() {
     },
     {
       name: 'Business Website',
-      price: '₹7,999',
+      price: '₹4,999',
       description: 'Ideal for growing businesses',
       features: [
         'Up to 10 pages',
@@ -203,17 +215,57 @@ export default function App() {
       popular: true
     },
     {
-      name: 'Custom Website',
-      price: '₹9,999',
-      description: 'Tailored solutions for unique needs',
+      name: 'Landing Page',
+      price: '₹6,999',
+      description: 'Ideal for growing businesses',
       features: [
-        'Unlimited pages',
-        'E-commerce features',
+        'Up to 10 pages',
+        'Custom design',
+        'Advanced SEO',
+        'Content management',
+        'Analytics integration',
+        '3 months support'
+      ],
+    },
+    {
+      name: 'Custom Website',
+      price: '₹1,999',
+      description: 'Tailored solutions for unique needs',
+      features: [       
         'Custom functionality',
         'Premium support',
         'Ongoing maintenance',
+        'Priority updates',
+        '3 months support'
+      ],
+      popular: true
+    },
+    {
+      name: 'AI Agents',
+      price: '₹9,999',
+      description: 'automate tasks and provide intelligent assistance',
+      features: [       
+        'Custom functionality',
+        'Premium support',
+        'Ongoing maintenance',
+        'Priority updates',
+        '3 months support'
+      ],
+      popular: true
+    },
+    {
+      name: 'maintenance',
+      price: '₹499/month',
+      description: 'Tailored solutions for unique needs',
+      features: [
+        'Regular updates',
+        'Security monitoring',
+        'Performance optimization',
+        'Premium support',
+        'Ongoing maintenance',
         'Priority updates'
-      ]
+      ],  
+      popular: true
     }
   ];
 
