@@ -1,0 +1,310 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* =========================
+   BASE LAYER
+========================= */
+@layer base {
+  body {
+    background-attachment: fixed;
+  }
+
+  [class*='bg-card'],
+  [class*='bg-popover'],
+  [class*='bg-accent'] {
+    backdrop-filter: blur(var(--glass-blur, 10px));
+    -webkit-backdrop-filter: blur(var(--glass-blur, 10px));
+  }
+}
+
+/* =========================
+   COMPONENTS LAYER
+========================= */
+@layer components {
+
+  /* =========================
+     GLASS CARD
+  ========================= */
+  .glass-card {
+    @apply bg-white/10 border border-white/20 rounded-2xl shadow-lg;
+
+    background: var(--card);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    box-shadow: var(--glass-shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  /* =========================
+     CARD SIZES
+  ========================= */
+
+  .glass-card-lg {
+    @apply p-8;
+  }
+
+  .glass-card-md {
+    @apply p-6;
+  }
+
+  .glass-card-sm {
+    @apply p-4;
+  }
+
+  /* =========================
+     BUTTON
+  ========================= */
+
+  .glass-button {
+    @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300;
+
+    background: rgba(99, 102, 241, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    color: white;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  }
+
+  .glass-button:hover {
+    background: rgba(99, 102, 241, 0.95);
+
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+
+    transform: translateY(-2px);
+  }
+
+  /* =========================
+     INPUT
+  ========================= */
+
+  .glass-input {
+    @apply w-full px-4 py-3 rounded-xl border transition-all duration-200;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: var(--glass-border);
+
+    color: var(--foreground);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-input:focus {
+    outline: none;
+
+    border-color: rgba(99, 102, 241, 0.5);
+
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+
+  /* =========================
+     SECTION
+  ========================= */
+
+  .glass-section {
+    @apply relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden;
+  }
+
+  .glass-section::before {
+    content: '';
+
+    @apply absolute inset-0 -z-10;
+
+    background:
+      radial-gradient(
+        circle at 50% 50%,
+        rgba(99, 102, 241, 0.1) 0%,
+        transparent 70%
+      );
+
+    backdrop-filter: blur(100px);
+  }
+
+  /* =========================
+     3D EFFECT
+  ========================= */
+
+  .glass-perspective {
+    perspective: 1200px;
+    transform-style: preserve-3d;
+  }
+
+  .glass-3d-card {
+    @apply transition-transform duration-500;
+
+    transform-style: preserve-3d;
+
+    transform:
+      rotateX(0deg)
+      rotateY(0deg)
+      translateZ(0);
+  }
+
+  .glass-3d-card:hover {
+    transform:
+      rotateX(5deg)
+      rotateY(5deg)
+      translateZ(20px);
+  }
+
+  /* =========================
+     FLOAT ANIMATION
+  ========================= */
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .glass-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* =========================
+     GRADIENT BORDER
+  ========================= */
+
+  .glass-gradient-border {
+    @apply relative p-[1px] rounded-2xl;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(99, 102, 241, 0.5),
+        rgba(139, 92, 246, 0.5)
+      );
+  }
+
+  .glass-gradient-border > * {
+    @apply relative rounded-2xl;
+
+    background: var(--card);
+  }
+
+  /* =========================
+     GLOW EFFECT
+  ========================= */
+
+  .glass-glow {
+    position: relative;
+  }
+
+  .glass-glow::before {
+    content: '';
+
+    position: absolute;
+
+    inset: -2px;
+
+    border-radius: inherit;
+
+    padding: 2px;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(99, 102, 241, 0.4),
+        rgba(139, 92, 246, 0.4)
+      );
+
+    opacity: 0;
+
+    transition: opacity 0.3s;
+
+    z-index: -1;
+  }
+
+  .glass-glow:hover::before {
+    opacity: 1;
+  }
+
+  /* =========================
+     BACKDROP BLUR
+  ========================= */
+
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .backdrop-blur-lg {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .backdrop-blur-xl {
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+  }
+
+  /* =========================
+     BORDER GLOW
+  ========================= */
+
+  .glass-border-glow {
+    @apply border transition-all duration-300;
+
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .glass-border-glow:hover,
+  .glass-border-glow:focus {
+    border-color: rgba(99, 102, 241, 0.5);
+
+    box-shadow:
+      0 0 0 2px rgba(99, 102, 241, 0.15);
+  }
+
+  /* =========================
+     NESTED LAYERS
+  ========================= */
+
+  .glass-layer-1 {
+    backdrop-filter: blur(10px);
+  }
+
+  .glass-layer-2 {
+    backdrop-filter: blur(15px);
+  }
+
+  .glass-layer-3 {
+    backdrop-filter: blur(25px);
+  }
+
+  /* =========================
+     GLOBAL TRANSITIONS
+  ========================= */
+
+  * {
+    @apply transition-shadow duration-300;
+  }
+}
